@@ -1,15 +1,13 @@
 package com.SpringbootJava.SpringbootJdbcSql.User;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 
 @RestController
-@RequestMapping(path ="api/v1/student" ) // http://127.0.0.1:8080/api/v1/student
+// @RequestMapping(path ="api/v1/users" ) // http://127.0.0.1:8080/api/v1/users
 public class UserController {
 
     private final UserService userService;
@@ -19,8 +17,14 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping
-    public List<User> getStudents(){
-        return userService.getStudents();
+    @GetMapping(path ="api/v1/users" )
+    public List<User> getUsers() {return userService.getUsers(); }
+
+    @GetMapping("api/v1/users/{id}")
+    User one(@PathVariable Long id) {
+
+        return userService.getUser(id);
     }
+
+
 }

@@ -10,7 +10,7 @@ import java.util.List;
 @Service
 public class UserService {
 
-    public List<User> getStudents(){
+    public List<User> getUsers(){
         return List.of(
                 new User(
                         1L,
@@ -21,4 +21,16 @@ public class UserService {
                 )
         );
     }
+
+    public User getUser(long id){
+        return new User(
+                1L,
+                "Mahnaz",
+                "exemplem@gmail.com",
+                LocalDate.of(2000, Month.JANUARY,5),
+                21
+        );
+    }
 }
+
+

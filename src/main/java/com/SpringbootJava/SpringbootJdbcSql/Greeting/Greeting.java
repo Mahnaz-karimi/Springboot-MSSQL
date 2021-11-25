@@ -1,4 +1,4 @@
-package com.SpringbootJava.SpringbootJdbcSql.Gretting;
+package com.SpringbootJava.SpringbootJdbcSql.Greeting;
 
 public class Greeting {
 

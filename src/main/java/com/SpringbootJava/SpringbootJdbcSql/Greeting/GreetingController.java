@@ -1,4 +1,4 @@
-package com.SpringbootJava.SpringbootJdbcSql.Gretting;
+package com.SpringbootJava.SpringbootJdbcSql.Greeting;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
