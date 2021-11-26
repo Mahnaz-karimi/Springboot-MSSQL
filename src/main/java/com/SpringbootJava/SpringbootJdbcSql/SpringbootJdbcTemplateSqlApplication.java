@@ -7,8 +7,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.support.GeneratedKeyHolder;
-import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.web.bind.annotation.RestController;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -34,7 +32,6 @@ public class SpringbootJdbcTemplateSqlApplication implements CommandLineRunner {
 				BeanPropertyRowMapper.newInstance(User.class));
 
 		users.forEach(System.out :: println);
-
 	}
 
 	public void create(Connection connection) {
@@ -45,5 +42,4 @@ public class SpringbootJdbcTemplateSqlApplication implements CommandLineRunner {
 			e.printStackTrace();
 		}
 	}
-
 }

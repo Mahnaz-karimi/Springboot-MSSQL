@@ -26,26 +26,26 @@ public class SpringbootJdbcTemplateSqlApplicationTests {
         User user1= new User("Alice","ex.gamil.com", LocalDate.of(2000, Month.JANUARY,5),38);
         User user2= new User("Sara","eex.mail.com", LocalDate.of(2015, Month.MARCH,8),18);
         //save user, verify has ID value after save
-//        assertNull(user1.getId());
-//        assertNull(user2.getId());//null before save
-//        this.userRepository.save(user1);
-//        this.userRepository.save(user2);
-//        assertNotNull(user1.getId());
-//        assertNotNull(user2.getId());
+        assertNull(user1.getId());
+        assertNull(user2.getId());//null before save
+        this.userRepository.save(user1);
+        this.userRepository.save(user2);
+        assertNotNull(user1.getId());
+        assertNotNull(user2.getId());
     }
     @Test
     public void testFetchData(){
 
         /*Test data retrieval*/
-//        User userA = userRepository.findByName("Alice");
-//        assertNotNull(userA);
-//        assertEquals(38,0, userA.getAge());
-//        /*Get all products, list should only have two*/
-//        Iterable users = userRepository.findAll();
-//        int count = 0;
-//        for(Object p : users){
-//            count++;
-//        }
-//        assertEquals(count, 2);
+        User userA = userRepository.findByName("Alice");
+        assertNotNull(userA);
+        assertEquals(38,0, userA.getAge());
+        /*Get all products, list should only have two*/
+        Iterable users = userRepository.findAll();
+        int count = 0;
+        for(Object p : users){
+            count++;
+        }
+        assertEquals(count, 2);
     }
 }
