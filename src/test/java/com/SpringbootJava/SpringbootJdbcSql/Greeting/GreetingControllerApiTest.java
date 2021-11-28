@@ -9,7 +9,9 @@ import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.RequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static org.junit.jupiter.api.Assertions.*;
-
+import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.boot.test.web.client.TestRestTemplate;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
@@ -32,6 +34,20 @@ class GreetingControllerApiTest {
         MvcResult result = mvc.perform(request).andReturn();
         System.out.println("result is:"+result.getResponse().getContentAsString().split("\"")[5]);
         assertEquals("Hello, World!", result.getResponse().getContentAsString().split("\"")[5]);
-
     }
+
+    @LocalServerPort
+    private int port;
+
+    @Autowired
+    private TestRestTemplate restTemplate;
+
+    @Test
+    public void greetingShouldReturnDefaultMessage() throws Exception {
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/",
+                String.class)).contains("Hello, World!");
+    }
+
+
+
 }

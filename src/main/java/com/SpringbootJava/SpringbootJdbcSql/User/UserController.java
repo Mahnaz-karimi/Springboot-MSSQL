@@ -7,7 +7,6 @@ import java.util.List;
 
 
 @RestController
-// @RequestMapping(path ="api/v1/users" ) // http://127.0.0.1:8080/api/v1/users
 public class UserController {
 
     private final UserService userService;
@@ -17,14 +16,12 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping(path ="api/v1/users" )
+    @GetMapping(path ="api/v1/users" ) // http://127.0.0.1:8080/api/v1/users
     public List<User> getUsers() {return userService.getUsers(); }
 
     @GetMapping("api/v1/users/{id}")
     User one(@PathVariable Long id) {
-
         return userService.getUser(id);
     }
-
 
 }
