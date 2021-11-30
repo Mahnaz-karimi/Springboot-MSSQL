@@ -37,7 +37,7 @@ class GreetingControllerApiTest {
     }
 
     @LocalServerPort
-    private int port = 8080;
+    private int port;
 
     @Autowired
     private TestRestTemplate restTemplate;
