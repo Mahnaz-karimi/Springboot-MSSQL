@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class UserService {
                         1L,
                         "Mahnaz",
                         "exemplem@gmail.com",
-                        LocalDate.of(2000, Month.JANUARY,5),
+                        LocalDateTime.of(2000, Month.JANUARY,5,12,50),
                         21
                 )
         );
@@ -41,7 +42,7 @@ public class UserService {
                 1L,
                 "Mahnaz",
                 "exemplem@gmail.com",
-                LocalDate.of(2000, Month.JANUARY,5),
+                LocalDateTime.of(2000, Month.JANUARY,5,20,30),
                 21
         );
     }

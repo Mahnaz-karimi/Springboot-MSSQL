@@ -1,7 +1,7 @@
 package com.SpringbootJava.SpringbootJdbcSql.User;
 
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import javax.persistence.*;
 
 @Entity
@@ -13,10 +13,10 @@ public class User {
     private Long id;
     private String name;
     private String email;
-    private LocalDate dob;
+    private LocalDateTime dob;
     private Integer age;
 
-    public User(Long id, String name, String email, LocalDate dob, Integer age) {
+    public User(Long id, String name, String email, LocalDateTime dob, Integer age) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -24,7 +24,7 @@ public class User {
         this.age = age;
     }
 
-    public User(String name, String email, LocalDate dob, Integer age) {
+    public User(String name, String email, LocalDateTime dob, Integer age) {
         this.name = name;
         this.email = email;
         this.dob = dob;
@@ -47,7 +47,7 @@ public class User {
         return email;
     }
 
-    public LocalDate getDob() {
+    public LocalDateTime getDob() {
         return dob;
     }
 
@@ -63,7 +63,7 @@ public class User {
         this.email = email;
     }
 
-    public void setDob(LocalDate dob) {
+    public void setDob(LocalDateTime dob) {
         this.dob = dob;
     }
 
